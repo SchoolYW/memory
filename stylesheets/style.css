@@ -4,4 +4,11 @@
   height: 100px;
   float: left;
   margin: 10px;
+  text-align: center;
+  display: table;
+}
+
+.card span{
+  display: table-cell;
+  vertical-align: center;
 }
