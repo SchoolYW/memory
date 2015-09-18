@@ -6,18 +6,15 @@
   margin: 10px;
   text-align: center;
   display: table;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
 }
 
 .card span{
   display: table-cell;
   vertical-align: middle;
+  visibility: hidden;
+  
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
   -o-user-select: none;
-  visibility: hidden;
 }
