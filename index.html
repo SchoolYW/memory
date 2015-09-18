@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="stylesheets/style.css">
     <script>
       function changeVisibility(element){
-        if(element.style.visibility=="visible"){
-          element.style.visibility = "hidden";
+        var span = element.getElementsByTagName("span")[0];
+        if(span.style.visibility=="visible"){
+          span.style.visibility = "hidden";
         }else{
-          element.style.visibility = "visible";
+          span.style.visibility = "visible";
         }
       }
     </script>
@@ -19,17 +20,17 @@
   </head>
   <body>
     <div id="playfield">
-      <div id="0" class="card">
-        <span onClick="changeVisibility(this)">1</span>
+      <div id="0" class="card"onClick="changeVisibility(this)">
+        <span>1</span>
       </div>
-      <div id="1" class="card">
-        <span onClick="changeVisibility(this)">2</span>
+      <div id="1" class="card" onClick="changeVisibility(this)">
+        <span>2</span>
       </div>
-      <div id="2" class="card">
-        <span onClick="changeVisibility(this)">2</span>
+      <div id="2" class="card" onClick="changeVisibility(this)">
+        <span>2</span>
       </div>
-      <div id="3" class="card">
-        <span onClick="changeVisibility(this)">1</span>
+      <div id="3" class="card" onClick="changeVisibility(this)">
+        <span>1</span>
       </div>
     </div>
     <div id="statistics"></div>
