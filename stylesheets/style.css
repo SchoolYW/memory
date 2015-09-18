@@ -15,4 +15,8 @@
 .card span{
   display: table-cell;
   vertical-align: middle;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }
