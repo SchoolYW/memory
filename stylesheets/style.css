@@ -1,3 +1,17 @@
+div{
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+span{
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
 .card{
   background-color: lightgrey;
   width: 100px;
@@ -12,9 +26,4 @@
   display: table-cell;
   vertical-align: middle;
   visibility: hidden;
-  
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
 }
