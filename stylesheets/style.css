@@ -1,4 +1,6 @@
 .card{
-  color: red;
-  margin: 10;
+  background-color: lightgrey;
+  width: 100px;
+  height: 100px;
+  float: left;
 }
