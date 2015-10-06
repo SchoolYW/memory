@@ -12,6 +12,11 @@ span{
   -o-user-select: none;
 }
 
+.row{
+  width: 480px;
+  height: 480px;
+}
+
 .card{
   background-color: lightgrey;
   width: 100px;
