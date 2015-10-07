@@ -40,6 +40,11 @@ function memoryObject(){
         object.changeVisibility(secondCard);
         object.isAvailable = true;
     }
+    
+    this.refreshGame = function()
+    {
+        location.reload();
+    }
 }
 
 var memory = new memoryObject();
