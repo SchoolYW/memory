@@ -12,22 +12,28 @@ span{
   -o-user-select: none;
 }
 
+.field{
+ display: table;
+}
+
 .row{
-  width: 480px;
+  display: table-row;
 }
 
 .card{
-  background-color: lightgrey;
   width: 100px;
   height: 100px;
+  background-color: lightgrey;
   float: left;
   margin: 10px;
   text-align: center;
-  display: table;
+  display: table-cell;
 }
 
 .card span{
   display: table-cell;
+  width: 100px;
+  height: 100px;
   vertical-align: middle;
   visibility: hidden;
 }
