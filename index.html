@@ -10,16 +10,23 @@
     <title>Memory</title>
   </head>
   <body>
-    <div>
-      <div id="playfield" class="field">
-      </div>
-      <div id="statistics">
-        <div id="timer"></div>
-        <div id="failCounter"></div>
-      </div>
-      <div id="buttons">
-        <button onClick="memory.refreshGame()">Restart</button> 
-        </div>
-    </div>
+    <div class="table">
+  		<div class="row">
+  			<div id="playfield" class="table">
+  			</div>
+  		</div>
+  		<div class="row">
+  			<div id="statistics" class="statistics">
+  				<div class="row">
+  					<div id="timer" style="float:left; margin-left: 10px;"></div>
+  					<div style="float:left; margin-left: 50px; margin-right: 5px;">Tries:</div>
+  					<div id="failCounter" style="float:left;">0</div>
+  				</div>
+  			</div>
+  		</div>
+  		<div id="buttons" class="row">
+  		  <button onClick="memory.refreshGame()" class="button" style="float:right;">Restart</button> 
+  		</div>
+	  </div>
   </body>
 </html>
