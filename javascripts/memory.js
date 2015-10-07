@@ -22,7 +22,13 @@ function memoryObject(){
                     element.setAttribute("data-finalized", true);
                 }else{
                     this.isAvailable = false;
-                    window.setTimeout(this.resetCards(element, document.getElementById(this.cardSelected)),500);
+                    var secondCard = document.getElementById(this.cardSelected);
+                    window.setTimeout(function(element, secondCard)
+                                        {
+                                            this.changeVisibility(element);
+                                            this.changeVisibility(secondCard);
+                                            this.isAvailable = true;
+                                        },500);
                     //this.changeVisibility(element);
                     //this.changeVisibility(document.getElementById(this.cardSelected));
                 }
