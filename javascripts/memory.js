@@ -48,3 +48,12 @@ function memoryObject(){
 }
 
 var memory = new memoryObject();
+var timerCount = 0;
+window.onLoad() = timerFunction();
+var timerFunction = function()
+{
+    var timer = document.getElementById("timer");
+    timer.innerHTML = timerCount++;
+    window.setInterval(timerFunction, 1000);
+}
+
