@@ -11,7 +11,7 @@ function memoryObject(){
         }
     }
     this.cardChosen = function(element){
-        if(element.getAttribute("data-finalized") == "false"){
+        if(element.getAttribute("data-finalized") == "false" && this.cardSelected != element.id){
             this.changeVisibility(element);
             if(this.cardSelected != -1){
                 var selectedValue = document.getElementById(this.cardSelected).getElementsByTagName("span")[0].innerHTML;
