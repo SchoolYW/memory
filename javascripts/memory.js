@@ -53,6 +53,6 @@ window.setTimeout(timerFunction, 1000);
 function timerFunction()
 {
     document.getElementById("timer").innerHTML = timerCount++;
-    window.setInterval(timerFunction, 1000);
+    window.setTimeout(timerFunction, 1000);
 }
 
