@@ -49,7 +49,7 @@ function memoryObject(){
 
 var memory = new memoryObject();
 var timerCount = 0;
-window.onload = timerFunction();
+window.setTimeout(timerFunction, 1000);
 function timerFunction()
 {
     document.getElementById("timer").innerHTML = timerCount++;
