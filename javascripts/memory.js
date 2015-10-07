@@ -21,6 +21,7 @@ function memoryObject(){
                     document.getElementById(this.cardSelected).setAttribute("data-finalized", true);
                     element.setAttribute("data-finalized", true);
                 }else{
+                    this.refreshFailCounter();
                     this.isAvailable = false;
                     var secondCard = document.getElementById(this.cardSelected);
                     window.setTimeout(this.resetCards,500, this, element, secondCard);
@@ -41,6 +42,11 @@ function memoryObject(){
         object.isAvailable = true;
     }
     
+    this.refreshFailCounter = function()
+    {
+        document.getElementById("failCounter").innerHTML = failCount++;
+    }
+    
     this.refreshGame = function()
     {
         location.reload();
@@ -49,6 +55,7 @@ function memoryObject(){
 
 var memory = new memoryObject();
 var timerCount = 0;
+var failCount = 0;
 window.setTimeout(timerFunction, 1000);
 function timerFunction()
 {
