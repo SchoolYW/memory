@@ -50,7 +50,7 @@ function memoryObject(){
 var memory = new memoryObject();
 var timerCount = 0;
 window.onload = timerFunction();
-var timerFunction = function()
+function timerFunction()
 {
     var timer = document.getElementById("timer");
     timer.innerHTML = timerCount++;
