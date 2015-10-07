@@ -52,8 +52,7 @@ var timerCount = 0;
 window.onload = timerFunction();
 function timerFunction()
 {
-    var timer = document.getElementById("timer");
-    timer.innerHTML = timerCount++;
+    document.getElementById("timer").innerHTML = timerCount++;
     window.setInterval(timerFunction, 1000);
 }
 
