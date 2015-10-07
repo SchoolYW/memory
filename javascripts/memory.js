@@ -22,7 +22,7 @@ function memoryObject(){
                     element.setAttribute("data-finalized", true);
                 }else{
                     this.isAvailable = false;
-                    this.setTimeout(this.resetCards(element, document.getElementById(this.cardSelected)),500);
+                    window.setTimeout(this.resetCards(element, document.getElementById(this.cardSelected)),500);
                     //this.changeVisibility(element);
                     //this.changeVisibility(document.getElementById(this.cardSelected));
                 }
