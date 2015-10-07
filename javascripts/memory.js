@@ -23,7 +23,7 @@ function memoryObject(){
                 }else{
                     this.isAvailable = false;
                     var secondCard = document.getElementById(this.cardSelected);
-                    window.setTimeout(this.resetCards,500, element, secondCard);
+                    window.setTimeout(this.resetCards,500, this, element, secondCard);
                     //this.changeVisibility(element);
                     //this.changeVisibility(document.getElementById(this.cardSelected));
                 }
@@ -34,11 +34,11 @@ function memoryObject(){
         }
     }
     
-    this.resetCards = function(firstCard, secondCard)
+    this.resetCards = function(object, firstCard, secondCard)
     {
-        this.changeVisibility(firstCard);
-        this.changeVisibility(secondCard);
-        this.isAvailable = true;
+        object.changeVisibility(firstCard);
+        object.changeVisibility(secondCard);
+        object.isAvailable = true;
     }
 }
 
