@@ -12,18 +12,51 @@ span{
   -o-user-select: none;
 }
 
-.field{
+.table{
+ margin: auto;
  display: table;
+ margin-top: 40px;
 }
 
 .row{
   display: table-row;
 }
 
+.button {
+	display: inline-block;
+	color: #666;
+	background-color: #eee;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	padding: 10px 30px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-bottom-width: 3px;
+	margin-top: 15px;
+}
+
+.button:hover {
+	background-color: #e3e3e3;
+	border-color: rgba(0,0,0,0.5);
+}
+
+.button:active {
+	background-color: #CCC;
+	border-color: rgba(0,0,0,0.9);
+}
+
+.statistics{
+font-size: 20px;
+margin:10px;
+}
+
 .card{
   width: 100px;
   height: 100px;
-  background-color: lightgrey;
+  background-color: darkgrey;
   float: left;
   margin: 10px;
   text-align: center;
@@ -35,5 +68,7 @@ span{
   width: 100px;
   height: 100px;
   vertical-align: middle;
+  background-color: lightgrey;
   visibility: hidden;
+  font-size: 25px;
 }
