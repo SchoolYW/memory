@@ -1,4 +1,4 @@
-function memory(){
+function memoryObject(){
     this.cardSelected = -1;
     this.cardIds = [0, 1, 2, 3, 4, 5, 6, 7];
     
@@ -30,3 +30,5 @@ function memory(){
         }
     }
 }
+
+var memory = new memoryObject();
