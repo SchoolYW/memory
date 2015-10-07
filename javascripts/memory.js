@@ -12,7 +12,7 @@ function memoryObject(){
         }
     }
     this.cardChosen = function(element){
-        if(element.getAttribute("data-finalized") == "false" && this.cardSelected != element.id){
+        if(element.getAttribute("data-finalized") == "false" && this.cardSelected != element.id && this.isAvailable){
             this.changeVisibility(element);
             if(this.cardSelected != -1){
                 var selectedValue = document.getElementById(this.cardSelected).getElementsByTagName("span")[0].innerHTML;
@@ -22,7 +22,7 @@ function memoryObject(){
                     element.setAttribute("data-finalized", true);
                 }else{
                     this.isAvailable = false;
-                    this.setTimeout(restCards(element, document.getElementById(this.cardSelected)),500);
+                    this.setTimeout(this.resetCards(element, document.getElementById(this.cardSelected)),500);
                     //this.changeVisibility(element);
                     //this.changeVisibility(document.getElementById(this.cardSelected));
                 }
