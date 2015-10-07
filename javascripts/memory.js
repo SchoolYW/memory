@@ -1,8 +1,9 @@
 function memoryObject(){
 	this.cardAmount = 0;
 	this.cardCounter = 0;
+	this.rightPairs = 0;
 	this.cardSelected = -1;
-    this.isAvailable = true;
+    	this.isAvailable = true;
 	
 	this.createCard = function(){
 		var card = document.createElement("div");
@@ -77,27 +78,36 @@ function memoryObject(){
 		this.shuffleCards();
 	}
 	
-    this.cardChosen = function(element){
-        if(element.getAttribute("data-finalized") == "false" && this.cardSelected != element.id && this.isAvailable){
-            this.changeVisibility(element);
-            if(this.cardSelected != -1){
-                var selectedValue = document.getElementById(this.cardSelected).getElementsByTagName("span")[0].innerHTML;
-                var currentValue = element.getElementsByTagName("span")[0].innerHTML;
-                if(selectedValue == currentValue){
-                    document.getElementById(this.cardSelected).setAttribute("data-finalized", true);
-                    element.setAttribute("data-finalized", true);
-                }else{
-                    this.refreshFailCounter();
-                    this.isAvailable = false;
-                    var secondCard = document.getElementById(this.cardSelected);
-                    window.setTimeout(this.resetCards,500, this, element, secondCard);
-                }
-                this.cardSelected = -1;
-            }else{
-                this.cardSelected = element.id;
-            }
-        }
-    }
+    	this.cardChosen = function(element){
+	        if(element.getAttribute("data-finalized") == "false" && this.cardSelected != element.id && this.isAvailable){
+	            this.changeVisibility(element);
+	            if(this.cardSelected != -1){
+	                var selectedValue = document.getElementById(this.cardSelected).getElementsByTagName("span")[0].innerHTML;
+	                var currentValue = element.getElementsByTagName("span")[0].innerHTML;
+	                if(selectedValue == currentValue){
+	                    document.getElementById(this.cardSelected).setAttribute("data-finalized", true);
+	                    element.setAttribute("data-finalized", true);
+	                    this.rightPairs++;
+			    if (this.rightPairs == this.cardAmount / 2)
+				this.finishGame();
+	                }else{
+	                    this.refreshFailCounter();
+	                    this.isAvailable = false;
+	                    var secondCard = document.getElementById(this.cardSelected);
+	                    window.setTimeout(this.resetCards,500, this, element, secondCard);
+	                }
+	                this.cardSelected = -1;
+	            }else{
+	                this.cardSelected = element.id;
+	            }
+	        }
+    	}
+	
+	this.finishGame = function(){
+		running = false;
+		var console = document.getElementById("console");
+		console.innerHTML = "You win!";
+	}
 	
 	this.changeVisibility = function(element){
 		var span = element.getElementsByTagName("span")[0];
@@ -105,8 +115,8 @@ function memoryObject(){
 			span.style.visibility = "hidden";
 		}else{
 			span.style.visibility = "visible";
+		}
 	}
-}
     
     this.resetCards = function(object, firstCard, secondCard)
     {
@@ -134,14 +144,14 @@ function toTimer(seconds)
 {
 	var sec_num = parseInt(seconds, 10);
 	var hours   = Math.floor(sec_num / 3600);
-    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+	var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+	var seconds = sec_num - (hours * 3600) - (minutes * 60);
 	
 	if (hours   < 10) {hours   = "0"+hours;}
-    if (minutes < 10) {minutes = "0"+minutes;}
-    if (seconds < 10) {seconds = "0"+seconds;}
-    var time    = hours+':'+minutes+':'+seconds;
-    return time;
+	if (minutes < 10) {minutes = "0"+minutes;}
+	if (seconds < 10) {seconds = "0"+seconds;}
+	var time    = hours+':'+minutes+':'+seconds;
+	return time;
 }
 
 function timerFunction()
