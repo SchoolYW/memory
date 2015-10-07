@@ -2,7 +2,7 @@ function memoryObject(){
     this.cardSelected = -1;
     this.cardIds = [0, 1, 2, 3, 4, 5, 6, 7];
     
-    this.changeVisbility = function(element){
+    this.changeVisibility = function(element){
         var span = element.getElementsByTagName("span")[0];
         if(span.style.visibility=="visible"){
             span.style.visibility = "hidden";
@@ -20,8 +20,8 @@ function memoryObject(){
                     document.getElementById(this.cardSelected).setAttribute("data-finalized", true);
                     element.setAttribute("data-finalized", true);
                 }else{
-                    this.changeVisbility(element);
-                    this.changeVisbility(document.getElementById(this.cardSelected));
+                    this.changeVisibility(element);
+                    this.changeVisibility(document.getElementById(this.cardSelected));
                 }
                 this.cardSelected = -1;
             }else{
