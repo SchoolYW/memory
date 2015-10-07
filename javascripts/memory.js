@@ -23,11 +23,12 @@ function memoryObject(){
                 }else{
                     this.isAvailable = false;
                     var secondCard = document.getElementById(this.cardSelected);
-                    window.setTimeout(function(element, secondCard)
+                    var ele = this;
+                    window.setTimeout(function(ele, element, secondCard)
                                         {
-                                            this.changeVisibility(element);
-                                            this.changeVisibility(secondCard);
-                                            this.isAvailable = true;
+                                            ele.changeVisibility(element);
+                                            ele.changeVisibility(secondCard);
+                                            ele.isAvailable = true;
                                         },500);
                     //this.changeVisibility(element);
                     //this.changeVisibility(document.getElementById(this.cardSelected));
