@@ -12,13 +12,6 @@ span{
   -o-user-select: none;
 }
 
-body *{
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
-}
-
 .table{
  margin: auto;
  display: table;
