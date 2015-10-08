@@ -60,7 +60,7 @@ function memoryObject(){
 		this.cardAmount = amount * 2;
 		var playfield = document.getElementById("playfield");
 		
-		var rows = Math.sqrt(this.cardAmount);
+		var rows = Math.ceil(Math.sqrt(this.cardAmount));
 		var columns = Math.round(rows);
 		for (var i = 0; i<Math.floor(rows); i++)
 		{
