@@ -104,9 +104,10 @@ function memoryObject(){
     	}
 	
 	this.finishGame = function(){
-		running = false;
+		//running = false;
 		var console = document.getElementById("console");
 		console.innerHTML = "You win!";
+		clearTimeout(timer);
 	}
 	
 	this.changeVisibility = function(element){
@@ -139,6 +140,7 @@ function memoryObject(){
 var memory = new memoryObject();
 var timerCount = 0;
 var failCount = 1;
+var timer;
 
 function toTimer(seconds)
 {
@@ -158,7 +160,7 @@ function timerFunction()
 {
 	document.getElementById("timer").innerHTML = toTimer(timerCount);
 	timerCount++
-	window.setTimeout(timerFunction, 1000);
+	timer = window.setTimeout(timerFunction, 1000);
 }
 	
 window.onload = function(){
