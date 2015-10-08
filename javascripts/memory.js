@@ -162,8 +162,21 @@ function timerFunction()
 	timerCount++
 	timer = window.setTimeout(timerFunction, 1000);
 }
+
+function getParam(name){
+   if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+      return decodeURIComponent(name[1]);
+}
+
+
+
 	
 window.onload = function(){
-	memory.createPlayfield(4);
+	var pairNum = getParam("pairNum");
+	if(pairNum != undefined){
+		memory.createPlayfield(pairNum);
+	}else{
+		memory.createPlayField(8)
+	}
 	timerFunction();
 }
