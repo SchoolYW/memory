@@ -106,7 +106,7 @@ function memoryObject(){
 	this.finishGame = function(){
 		//running = false;
 		var console = document.getElementById("console");
-		console.innerHTML = "You win!";
+		console.innerHTML = "Du hast gewonnen!";
 		clearTimeout(timer);
 	}
 	
