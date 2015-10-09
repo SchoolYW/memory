@@ -137,11 +137,6 @@ function memoryObject(){
     }
 }
 
-var memory = new memoryObject();
-var timerCount = 0;
-var failCount = 1;
-var timer;
-
 function toTimer(seconds)
 {
 	var sec_num = parseInt(seconds, 10);
@@ -170,13 +165,18 @@ function getParam(name){
 
 
 
+
+var memory = new memoryObject();
+var timerCount = 0;
+var failCount = 1;
+var timer;
 	
 window.onload = function(){
 	var pairNum = getParam("pairNum");
 	if(pairNum != undefined){
 		memory.createPlayfield(pairNum);
 	}else{
-		memory.createPlayField(8)
+		memory.createPlayfield(8);
 	}
 	timerFunction();
 }
